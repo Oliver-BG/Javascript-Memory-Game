@@ -1,0 +1,426 @@
+* {
+  font-family: 'Nunito', sans-serif;
+  margin: 0 0 0 0;
+  user-select: none;
+}
+
+body {
+  display: 100vh;
+  background-image: url('./background.png');
+  background-size: 50%;
+  justify-content: center;
+}
+
+.title-bar {
+  text-align: center;
+  color: white;
+}
+
+.title-banner {
+  background-color: black;
+}
+
+.timer-container{
+  position:absolute;
+  color: yellow;
+  top: 5%;
+  left: 47%;
+  transform: translate(-50% -50%);
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50vh;
+  flex: 1;
+  left: 50%;
+  transform: translate(-50%);
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.card {
+  /* position: relative; */
+  display: inline-block;
+  height: 30%;
+  width: 95%;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  margin: 2px 2px 2px 2px;
+  cursor: pointer;
+}
+
+.btn {
+  position: absolute;
+  left: 35%;
+  background-color: rgb(3, 139, 65);
+  border: 0;
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+
+.stats {
+  display: block;
+  background-color: black;
+  margin-bottom: 20px;
+}
+
+.blur {
+  filter: blur(0.2rem);
+}
+
+#score {
+  color: white;
+  font-size: 12px;
+}
+
+#moves,
+#max-moves {
+  color: white;
+  font-size: 10px;
+  margin-left: 2%;
+}
+
+/* MAIN MENU MODAL */
+
+.main-modal {
+  visibility: visible;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+#main-modal-text {
+  position: relative;
+  font-size: 20px;
+  left: 120%;
+  top: 5%;
+}
+
+#btn-play {
+  top: 20%;
+  left: 30%;
+  width: 150px;
+}
+
+#btn-abt {
+  top: 40%;
+  left: 30%;
+  width: 150px;
+}
+
+#btn-instr {
+  top: 60%;
+  left: 30%;
+  width: 150px;
+}
+
+/* DIFFICULTY MODAL */
+
+.diff-modal {
+  visibility: hidden;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+#diff-modal-text {
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 12px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#btn-veasy{
+  top: 15%;
+  font-size: 11px;
+}
+
+#btn-easy {
+  top: 28%;
+  font-size: 11px;
+}
+
+#btn-med {
+  top: 41%;
+  font-size: 11px;
+}
+
+#btn-hard {
+  top: 54%;
+  font-size: 11px;
+}
+
+#btn-vhard {
+  top: 67%;
+  font-size: 11px;
+}
+
+#btn-back {
+  top: 80%;
+  left: 35%;
+  width: 100px;
+  font-size: 11px;
+}
+
+/* WIN/LOSE MODAL */
+
+.win-modal {
+  visibility: hidden;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#win-modal-text,
+#lose-modal-text {
+  position: relative;
+  top: 10%;
+  left: 6%;
+  font-size: 12px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  display: block;
+  overflow-wrap: break-word;
+}
+
+.lose-modal {
+  visibility: hidden;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#btn-wyes,
+#btn-lyes {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  background-color: rgb(3, 139, 65);
+  border: 0;
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+
+#btn-wno,
+#btn-lno {
+  position: absolute;
+  top: 70%;
+  left: 35%;
+  background-color: rgb(3, 139, 65);
+  border: 0;
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+
+/* PAUSE MODAL */
+
+.pause-modal {
+  visibility: hidden;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 30%;
+  width: 300px;
+  left: 33%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#pause-modal-text {
+  position: relative;
+  top: 5%;
+  left: 40%;
+}
+
+#btn-pause {
+  visibility: hidden;
+  position: absolute;
+  background-color: red;
+  color: white;
+  top: 3%;
+  font-size: 12px;
+  right: 4%;
+  height: 20px;
+  border: solid;
+  border-radius: 4px;
+}
+
+#btn-back-p,
+#btn-cont {
+  font-size: 11px;
+}
+
+#btn-pause:hover {
+  transform: scale(1.1);
+  background-color: greenyellow;
+  cursor: pointer;
+}
+
+/* INSTRUCTION MODAL */
+.about-modal,
+.instr-modal,
+.instr-modal-p2,
+.instr-modal-p3,
+.instr-modal-p4,
+.instr-modal-p5 {
+  position: absolute;
+  top: 100px;
+  background-color: black;
+  color: white;
+  width: 300px;
+  flex-wrap: wrap;
+  top: 30%;
+  width: 300px;
+  left: 0%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+#btn-abt-back,
+.btn-instr-back {
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  background-color: rgb(3, 139, 65);
+  border: 0;
+  color: white;
+  text-align: center;
+  width: 100px;
+}
+
+.about-text,
+.instr-text {
+  position: relative;
+  inline-size: 255px;
+  font-size: 12px;
+  word-wrap: break-word;
+  top: 5%;
+  left: 10%;
+}
+
+.img-instr{
+  position: absolute;
+  height: 125px;
+  top: 45%;
+  left: 50%;
+  border: white solid;
+  border-width: 5px;
+  transform: translate(-50%, -50%);
+}
+
+.page{
+  position: absolute;
+  font-size: 12px;
+  top : 70%;
+  left: 48%;
+}
+
+.next {
+  position: absolute;
+  top: 80%;
+  height: 25px;
+  left: 80%;
+}
+
+.prev {
+  position: absolute;
+  transform: rotate(180deg);
+  top: 80%;
+  height: 25px;
+  left: 15%;
+}
+
+.prev:hover{
+  transform: scale(1.1) rotate(180deg);
+  cursor: pointer;
+}
+
+.next:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* ------------------- ABOUT MODAL ----------------------- */
+
+.about-modal{
+  visibility: hidden;
+}
+
+/* ------------------- MODAL POSITIONING ------------------*/
+
+.lose-modal,
+.main-modal,
+.diff-modal,
+.instr-modal,
+.instr-modal-p2,
+.instr-modal-p3,
+.instr-modal-p4,
+.instr-modal-p5,
+.pause-modal,
+.win-modal,
+.about-modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ------------------ HOVER ----------------------- */
+
+#btn-wyes:hover,
+#btn-lyes:hover,
+#btn-wno:hover,
+#btn-lno:hover,
+#btn-hard:hover,
+#btn-veasy:hover,
+#btn-med:hover,
+#btn-easy:hover,
+#btn-vhard:hover,
+#btn-play:hover,
+#btn-abt:hover,
+#btn-instr:hover,
+#btn-back:hover,
+#btn-cont:hover,
+#btn-instr-p:hover,
+#btn-back-p:hover,
+#btn-abt-back:hover,
+.btn-instr-back:hover {
+  transform: scale(1.1);
+  background-color: rgb(20, 233, 109);
+  cursor: pointer;
+}
+
+#back:hover {
+  transform: scale(1.2) rotate(180deg);
+  cursor: pointer;
+}
+
+#next:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

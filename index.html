@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class = "title-banner">
+      <h4 class="title-bar">MEMORY GAME</h4>
+    </div>
+    <div class = 'stats'>
+      <p id = 'moves'> &nbsp &nbsp MOVES: 0 </p>
+      <p id = 'max-moves'> &nbsp &nbsp MAX. ATTEMPTS: 0 </p>
+    </div>
+    <div class = "container">
+    </div>
+    
+    <!-- TIMER -->
+    <div class ='timer-container'>
+      <!--<span class = 'timer' id = 'timer-minute'>00</span>
+      <span class = 'timer' id = 'timer-part'>:</span> 
+      <span class = 'timer' id = 'timer-seconds'>00</span>-->    
+    </div>   
+    <!-- PAUSE BUTTON -->
+
+    <div>
+      <button id = "btn-pause"> PAUSE </button>
+    </div>
+
+    <!-- PAUSE MODAL-->
+
+    <div class = "pause-modal">
+      <p id = 'pause-modal-text' style = 'color : white'> PAUSED </p>
+      <div>
+        <button class = "btn" id = "btn-cont" style = "height:25px; top: 25%"> 
+          CONTINUE
+        </button>
+      </div>
+      <div>
+        <button class = "btn" id = "btn-instr-p" style = "height: 25px; font-size :11px; width: 100px; left: 35%; top: 45%;"> 
+          INSTRUCTIONS
+        </button>
+      </div>
+      <div>
+        <button class = "btn" id = "btn-back-p" style = "height: 25px; top: 65%"> 
+          BACK TO MENU
+        </button>
+      </div>
+    </div> 
+    
+    <!-- MAIN MENU -->
+
+    <div class = "main-modal">
+      <div>
+        <p id = "main-modal-text" style = "color: white"> MAIN MENU </p>
+        <button class = "btn" id = "btn-play" style = "height:25px" value = 0> 
+          PLAY
+        </button>
+      </div>
+      <div>
+        <button class = "btn" id = "btn-abt" style = "height: 25px" value = 1> 
+          ABOUT
+        </button>
+      </div>
+      <div>
+        <button class = "btn" id = "btn-instr" style = "height: 25px" value = 2> 
+          INSTRUCTIONS
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL DIFFICULTY -->
+
+    <div class = "diff-modal">
+      <p id = 'diff-modal-text' style = 'color : white'> CHOOSE THE DIFFICULTY </p>
+
+      <div>
+        <button class = "btn" id = "btn-veasy" style = "height:25px" value = 4> 
+          VERY EASY (8)
+        </button>
+        <button class = "btn" id = "btn-easy" style = "height:25px" value = 5> 
+          EASY (10)
+        </button>
+      </div>
+
+      <div>
+        <button class = "btn" id = "btn-med" style = "height: 25px" value = 8> 
+          MEDIUM (16)
+        </button>
+      </div>
+
+      <div>
+        <button class = "btn" id = "btn-hard" style = "height: 25px" value = 12> 
+          HARD (24)
+        </button>
+      </div>
+
+      <div>
+        <button class = "btn" id = "btn-vhard" style = "height: 25px" value = 16> 
+          VERY HARD (32)
+        </button>
+      </div>
+
+      <div>
+        <button class = "btn" id = "btn-back" style = "height: 25px"> 
+          BACK TO MENU
+        </button>
+      </div>
+    </div> 
+
+    <!-- MODAL WIN -->
+
+    <div class = "win-modal">
+      <p id = 'win-modal-text' style = 'color : white'> 🏆  CONGRATULATIONS! YOU WIN THE GAME! <br> WOULD YOU LIKE TO PLAY AGAIN? </p>
+      <button class = "btn-yes" id = "btn-wyes" style = "height:25px" value = true> 
+        YES
+      </button>
+      <button class = "btn-no" id = "btn-wno" style = "height: 25px" value = false> 
+        NO
+      </button>
+
+    <!-- MODAL LOSE -->
+
+    <div class = "lose-modal">
+      <p id = 'lose-modal-text' style = 'color : white'> 😞 SORRY, YOU LOSE. <br> WOULD YOU LIKE TO PLAY AGAIN? </p>
+      <button class = 'btn-yes' id = "btn-lyes" style = "height:25px" value = true> 
+        YES
+      </button>
+      <button class = 'btn-no' id = "btn-lno" style = "height: 25px" value = false> 
+        NO
+      </button>
+    </div>
+
+    <!-- MODAL INSTRUCTION -->
+
+    <div class = "instr-modal">
+      <p class = "instr-text" id = "instr-modal-text">Click two cards to reveal them</p>
+      <img class = 'img-instr' id ='img-p1' src = './instruction/instruct-p1.jpg'>
+      <a class = "page">1/5</a>
+      <button class = "btn-instr-back" style = "height: 25px" value = false> 
+        BACK
+      </button>
+      <img class = "next" src = "./arrow.png"><img>
+      <img class = "prev" src = "./arrow.png"><img>
+    </div>
+
+    <div class = "instr-modal-p2">
+      <p class = "instr-text" id = "instr-modal-text-p2">If the card matches, then it is revealed the entire game</p>
+      <img class = 'img-instr' id ='img-p2' src = './instruction/instruct-p1.jpg'>
+      <a class = "page">2/5</a>
+      <button class = "btn-instr-back" style = "height: 25px" value = false> 
+        BACK
+      </button>
+      <img class = "next" src = "./arrow.png"><img>
+      <img class = "prev" src = "./arrow.png"><img>
+    </div>
+
+    <div class = "instr-modal-p3">
+      <p class = "instr-text" id = "instr-modal-text-p3">If however the cards do not match, then it is flipped back again after a few seconds</p>
+      <img class = 'img-instr' id ='img-p3' src = './instruction/instruct-p3.jpg'>
+      <a class = "page">3/5</a>
+      <button class = "btn-instr-back" style = "height: 25px" value = false> 
+        BACK
+      </button>
+      <img class = "next" src = "./arrow.png"><img>
+      <img class = "prev" src = "./arrow.png"><img>
+    </div>
+
+    <div class = "instr-modal-p4">
+      <p class = "instr-text" id = "instr-modal-text-p4">If the moves you get is equal to the max. attempts, you lose</p>
+      <img class = 'img-instr' id ='img-p4' src = './instruction/instruct-p4.jpg'>
+      <a class = "page">4/5</a>
+      <button class = "btn-instr-back" style = "height: 25px" value = false> 
+        BACK
+      </button>
+      <img class = "next" src = "./arrow.png"><img>
+      <img class = "prev" src = "./arrow.png"><img>
+    </div>
+
+    <div class = "instr-modal-p5">
+      <p class = "instr-text" id = "instr-modal-text-p5">If all the cards are revealed, then you win! </p>
+      <img class = 'img-instr' id ='img-p5' src = './instruction/instruct-p5.jpg'>
+      <a class = "page">5/5</a>
+      <button class = "btn-instr-back" style = "height: 25px" value = false> 
+        BACK
+      </button>
+      <img class = "next" src = "./arrow.png"><img>
+      <img class = "prev" src = "./arrow.png"><img>
+    </div>
+
+    <!-- MODAL ABOUT -->
+
+    <div class = "about-modal">
+      <p class = "about-text" id = "abt-modal-text">This is a personal project made to practice coding using CSS, HTML and Javascript coding. This project was fun to build and I encourage anyone to try making one, especially beginners.</p> 
+      <br/>
+      <p class = "about-text">Please enjoy as much as you like as it took some time to make this one.</p>
+      <br/>
+      <p class = "about-text">- Oliver (2022)</p>
+      <button class = "btn" id = "btn-abt-back" style = "height: 25px" value = false> 
+        BACK
+      </button>
+    </div>
+  
+  </body>
+  <script type = "module" src="script.js"></script>
+</html>
